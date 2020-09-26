@@ -27,29 +27,107 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
+        backgroundColor: Colors.blueGrey,
         appBar: AppBar(
           title: Text('Flutter App 01 - Dave Fester'),
-          backgroundColor: Colors.orange,
+          backgroundColor: Colors.blue,
         ),
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[            
-            Container(
-              height: 100.0,
-              width: 100.0,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 3),
-                color: Colors.orange
-              ),              
-              child: Center(
-                child: Text(
-                  "Container 1",
-                  textAlign: TextAlign.center,
-                ) ,
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+          Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[            
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 3),
+                    color: Colors.orange
+                  ),              
+                  child: Center(
+                    child: Text(
+                      "Container 1",
+                      textAlign: TextAlign.center,
+                    ) ,
+                  ),
+                ),
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white
+                  ),              
+                  child: Center(
+                    child: Text(
+                      "Container 2",
+                      textAlign: TextAlign.center,
+                    ) ,
+                  ),
+                ),            
+              ],
+            ),
+          Column(
+            children: <Widget>[            
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(                    
+                    color: Colors.yellow
+                  ),              
+                  child: Center(
+                    child: Text(
+                      "Container 3",
+                    ) ,
+                  ),
+                ),
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(                    
+                    color: Colors.blue
+                  ),              
+                  child: Center(
+                    child: Text(
+                      "Container 4",
+                      style: TextStyle(color: Colors.white),
+                    ) ,
+                  ),
+                ),
+            ]
+          ),
+          Column(
+            children: <Widget>[
+              Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(                    
+                    color: Colors.black
+                  ),              
+                  child: Center(
+                    child: Text(
+                      "Container 5",
+                      style: TextStyle(color: Colors.white),
+                    ) ,
+                  ),
               ),
-            ),            
+              Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration: BoxDecoration(                    
+                    color: Colors.red
+                  ),              
+                  child: Center(
+                    child: Text(
+                      "Container 6",
+                    ) ,
+                  ),
+              ),
+            ],
+          ),
           ],
         ),
+             
       )
     );
   }
