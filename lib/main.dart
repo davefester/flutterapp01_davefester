@@ -8,13 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    var text = Text(
-                      "Con 6",
-                      style: TextStyle(
-                        fontSize: 30,
-                      ),
-                    );
+  Widget build(BuildContext context) {   
     return MaterialApp(
       title: 'Flutter App 01 - Dave Fester',
       theme: ThemeData(
@@ -144,7 +138,10 @@ class MyApp extends StatelessWidget {
                     decoration: BoxDecoration(                    
                       color: Colors.red
                     ), 
-                    child: text ,
+                    child: Text(
+                      'Con 6',
+                      style: TextStyle(fontSize: 30),
+                    ) ,
                   ),
                 ),
               ],
