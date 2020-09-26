@@ -67,9 +67,10 @@ class MyApp extends StatelessWidget {
                 ),            
               ],
             ),
-          Column(
-            children: <Widget>[            
-                Container(
+          Column(           
+            children: <Widget>[
+              Expanded(                          
+                child: Container(
                   height: 100.0,
                   width: 100.0,
                   decoration: BoxDecoration(                    
@@ -81,47 +82,52 @@ class MyApp extends StatelessWidget {
                     ) ,
                   ),
                 ),
-                Container(
+              ),
+              Expanded(
+                child: Container(
                   height: 100.0,
                   width: 100.0,
                   decoration: BoxDecoration(                    
                     color: Colors.blue
-                  ),              
-                  child: Center(
-                    child: Text(
-                      "Container 4",
-                      style: TextStyle(color: Colors.white),
-                    ) ,
+                  ),
+                  child: Text(
+                    "Container 4",
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.right,
                   ),
                 ),
+              ),
             ]
           ),
           Column(
-            children: <Widget>[
+            children: <Widget>[              
               Container(
-                  height: 100.0,
-                  width: 100.0,
-                  decoration: BoxDecoration(                    
-                    color: Colors.black
-                  ),              
-                  child: Center(
+                child: CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.black,
                     child: Text(
                       "Container 5",
                       style: TextStyle(color: Colors.white),
                     ) ,
                   ),
+                padding: EdgeInsets.all(3.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                ),
               ),
               Container(
                   height: 100.0,
                   width: 100.0,
                   decoration: BoxDecoration(                    
                     color: Colors.red
-                  ),              
-                  child: Center(
-                    child: Text(
-                      "Container 6",
-                    ) ,
-                  ),
+                  ), 
+                  child: Text(
+                    "Con 6",
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ) ,
               ),
             ],
           ),
