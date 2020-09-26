@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(MyApp());
@@ -8,6 +9,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var text = Text(
+                      "Con 6",
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    );
     return MaterialApp(
       title: 'Flutter App 01 - Dave Fester',
       theme: ThemeData(
@@ -34,10 +41,10 @@ class MyApp extends StatelessWidget {
         ),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-          Column(
+          children: <Widget>[           
+            Column(            
               mainAxisSize: MainAxisSize.max,
-              children: <Widget>[            
+              children: <Widget>[                       
                 Container(
                   height: 100.0,
                   width: 100.0,
@@ -52,88 +59,98 @@ class MyApp extends StatelessWidget {
                     ) ,
                   ),
                 ),
-                Container(
-                  height: 100.0,
-                  width: 100.0,
-                  decoration: BoxDecoration(
-                    color: Colors.white
-                  ),              
-                  child: Center(
-                    child: Text(
-                      "Container 2",
-                      textAlign: TextAlign.center,
-                    ) ,
+                Transform.rotate(
+                  angle: pi/4,
+                  child: Container(             
+                    height: 100.0,
+                    width: 100.0,
+                    decoration: BoxDecoration(
+                      color: Colors.white
+                    ),              
+                    child: Center(
+                      child: Text(
+                        "Container 2",
+                        textAlign: TextAlign.center,
+                        ) ,
+                      ),
+                    ), 
+                  ),     
+                ]
+              ),
+            Column(           
+              children: <Widget>[
+                Expanded(                                          
+                  child: Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child:
+                    Container(
+                      height: 100.0,
+                      width: 100.0,
+                      decoration: BoxDecoration(                    
+                        color: Colors.yellow
+                      ),              
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          "Container 3",
+                        ) ,
+                      ),
+                    ),
                   ),
-                ),            
+                ),
+                Expanded(
+                  child: Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                    child: Container(                                      
+                      height: 100.0,
+                      width: 100.0,
+                      decoration: BoxDecoration(                    
+                        color: Colors.blue
+                      ),
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          "Container 4",
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ]
+            ),
+            Column(
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[ 
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.black,
+                        child: Text(
+                          "Container 5",
+                          style: TextStyle(color: Colors.white),
+                        ) ,
+                      ),
+                    padding: EdgeInsets.all(3.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 100.0,
+                    width: 100.0,
+                    decoration: BoxDecoration(                    
+                      color: Colors.red
+                    ), 
+                    child: text ,
+                  ),
+                ),
               ],
             ),
-          Column(           
-            children: <Widget>[
-              Expanded(                          
-                child: Container(
-                  height: 100.0,
-                  width: 100.0,
-                  decoration: BoxDecoration(                    
-                    color: Colors.yellow
-                  ),              
-                  child: Center(
-                    child: Text(
-                      "Container 3",
-                    ) ,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 100.0,
-                  width: 100.0,
-                  decoration: BoxDecoration(                    
-                    color: Colors.blue
-                  ),
-                  child: Text(
-                    "Container 4",
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-              ),
-            ]
-          ),
-          Column(
-            children: <Widget>[              
-              Container(
-                child: CircleAvatar(
-                radius: 50,
-                backgroundColor: Colors.black,
-                    child: Text(
-                      "Container 5",
-                      style: TextStyle(color: Colors.white),
-                    ) ,
-                  ),
-                padding: EdgeInsets.all(3.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-              ),
-              Container(
-                  height: 100.0,
-                  width: 100.0,
-                  decoration: BoxDecoration(                    
-                    color: Colors.red
-                  ), 
-                  child: Text(
-                    "Con 6",
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
-                  ) ,
-              ),
-            ],
-          ),
           ],
         ),
-             
       )
     );
   }
